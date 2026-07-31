@@ -1,5 +1,4 @@
 import { createClient } from '@supabase/supabase-js'
-import type { Database } from '@/types/database'
 
 const url = import.meta.env.VITE_SUPABASE_URL
 const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
@@ -8,9 +7,13 @@ const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 // so pages don't hard-crash while someone is still filling in .env.
 export const isSupabaseConfigured = Boolean(url && anonKey)
 
+// Deliberately untyped (no generic Database param): a generic keyed by a
+// loose `[key: string]: {...}` index signature makes supabase-js infer
+// `never` for .insert()/.update() payloads. The app types its own data with
+// src/types/index.ts on the way in and out, so this trade-off is fine.
 export const supabase = isSupabaseConfigured
-  ? createClient<Database>(url, anonKey)
-  : (null as unknown as ReturnType<typeof createClient<Database>>)
+  ? createClient(url, anonKey)
+  : (null as unknown as ReturnType<typeof createClient>)
 
 export function requireSupabase() {
   if (!isSupabaseConfigured) {
