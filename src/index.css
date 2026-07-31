@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper text-ink font-body antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-gold-400 text-ink;
+  }
+  :focus-visible {
+    outline: 3px solid #E14B3C;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .container-ce {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .ticket-edge {
+    position: relative;
+  }
+  .ticket-edge::before,
+  .ticket-edge::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: #FBF3DE;
+    border-radius: 999px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  .ticket-edge::before { left: -11px; }
+  .ticket-edge::after { right: -11px; }
+
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.25em] text-chili;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
