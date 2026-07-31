@@ -32,7 +32,7 @@ export function AboutPreview() {
           transition={{ duration: 0.6 }}
           className="grid grid-cols-2 gap-4"
         >
-          <img src="/assets/gallery/gallery-04.jpeg" alt="" className="col-span-2 h-48 sm:h-56 w-full rounded-2xl border-2 border-ink object-cover" />
+          <img src={home.hero_media_url || '/assets/gallery/gallery-04.jpeg'} alt="" className="col-span-2 h-48 sm:h-56 w-full rounded-2xl border-2 border-ink object-cover" />
           <img src="/assets/gallery/gallery-03.jpeg" alt="" className="h-32 sm:h-40 w-full rounded-2xl border-2 border-ink object-cover" />
           <img src="/assets/gallery/gallery-01.jpeg" alt="" className="h-32 sm:h-40 w-full rounded-2xl border-2 border-ink object-cover" />
         </motion.div>

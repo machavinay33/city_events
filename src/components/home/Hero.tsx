@@ -89,11 +89,13 @@ export function Hero() {
           className="relative mx-auto w-full max-w-sm"
         >
           <div className="ticket-edge relative overflow-hidden rounded-3xl border-2 border-ink bg-white shadow-ticket">
-            <img
-              src={home.hero_media_url}
-              alt="City Events live poster"
-              className="aspect-[4/5] w-full object-cover"
-            />
+            {home.hero_media_url && (
+              <img
+                src={home.hero_media_url}
+                alt="City Events live poster"
+                className="aspect-[4/5] w-full object-cover"
+              />
+            )}
             {nextEvent && (
               <div className="border-t-2 border-dashed border-ink/40 bg-gold-50 px-5 py-4">
                 <p className="font-mono text-[11px] uppercase tracking-wider text-ink/60">Up next</p>

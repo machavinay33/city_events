@@ -91,7 +91,8 @@ export function useEvents() {
       .select('*')
       .eq('is_active', true)
       .order('event_date', { ascending: true })
-    if (error || !data || data.length === 0) throw error ?? new Error('empty')
+    if (error) throw error
+    // Return the actual data — even if empty, so deleted events don't show fallback
     return data as EventItem[]
   })
 }
@@ -102,7 +103,8 @@ export function useGallery() {
       .from('gallery_media')
       .select('*')
       .order('order_index', { ascending: true })
-    if (error || !data || data.length === 0) throw error ?? new Error('empty')
+    if (error) throw error
+    // Return actual data — even if empty, so deleted gallery items don't show fallback
     return data as GalleryMedia[]
   })
 }
