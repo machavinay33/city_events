@@ -44,6 +44,16 @@
   .ticket-edge::before { left: -11px; }
   .ticket-edge::after { right: -11px; }
 
+  @media (max-width: 640px) {
+    .ticket-edge::before,
+    .ticket-edge::after {
+      width: 16px;
+      height: 16px;
+    }
+    .ticket-edge::before { left: -8px; }
+    .ticket-edge::after { right: -8px; }
+  }
+
   .eyebrow {
     @apply font-mono text-xs uppercase tracking-[0.25em] text-chili;
   }

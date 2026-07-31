@@ -19,7 +19,7 @@ export default function Contact() {
     <>
       <PageHero page="contact" eyebrow="Reach out" title="Let's plan your next night" description="Fastest way to reach us is WhatsApp — but pick whatever works for you." />
       <Section>
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10">
           <div className="space-y-5">
             {items.map((item) => (
               <div key={item.label} className="flex items-start gap-4 rounded-2xl border-2 border-ink bg-white p-5">

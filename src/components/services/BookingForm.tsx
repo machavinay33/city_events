@@ -73,7 +73,7 @@ export function BookingModal({ service, onClose }: { service: Service | null; on
             <label className={labelClass}>Full Name</label>
             <input required className={inputClass} value={form.full_name} onChange={(e) => setForm({ ...form, full_name: e.target.value })} />
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className={labelClass}>Phone Number</label>
               <input required type="tel" className={inputClass} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
@@ -83,7 +83,7 @@ export function BookingModal({ service, onClose }: { service: Service | null; on
               <input required type="email" className={inputClass} value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className={labelClass}>Event Date</label>
               <input type="date" className={inputClass} value={form.event_date} onChange={(e) => setForm({ ...form, event_date: e.target.value })} />
@@ -97,7 +97,7 @@ export function BookingModal({ service, onClose }: { service: Service | null; on
             <label className={labelClass}>Event Location</label>
             <input required className={inputClass} placeholder="Venue / area in Nagpur" value={form.event_location} onChange={(e) => setForm({ ...form, event_location: e.target.value })} />
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className={labelClass}>Event Type</label>
               <select className={inputClass} value={form.event_type} onChange={(e) => setForm({ ...form, event_type: e.target.value })}>

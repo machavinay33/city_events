@@ -35,7 +35,7 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
             exit={{ opacity: 0 }}
           />
           <motion.div
-            className="relative w-full sm:max-w-lg max-h-[92vh] overflow-y-auto rounded-t-3xl sm:rounded-3xl border-2 border-ink bg-paper shadow-ticket"
+            className="relative w-full sm:max-w-lg max-h-[90vh] overflow-y-auto rounded-t-3xl sm:rounded-3xl border-2 border-ink bg-paper shadow-ticket"
             initial={{ y: 60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 40, opacity: 0 }}
@@ -51,7 +51,7 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
                 <X size={20} />
               </button>
             </div>
-            <div className="p-6">{children}</div>
+            <div className="p-5 sm:p-6">{children}</div>
           </motion.div>
         </motion.div>
       )}

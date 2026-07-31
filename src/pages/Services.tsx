@@ -14,7 +14,7 @@ export default function Services() {
     <>
       <PageHero page="services" eyebrow="What we do" title="Services built for a stage" description="Every format below is run end-to-end by us — artists, sound, and flow. No prices listed; tell us your event and we'll quote it." />
       <Section>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, i) => (
             <ServiceCard key={service.id} service={service} index={i} onBook={setSelected} />
           ))}

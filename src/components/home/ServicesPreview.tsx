@@ -8,7 +8,7 @@ export function ServicesPreview() {
 
   return (
     <Section eyebrow="What we do" title="Services, built for a stage" description="Pick a format — we bring the artists, the sound and the run-of-show.">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.slice(0, 5).map((service, i) => (
           <motion.div
             key={service.id}
@@ -18,12 +18,18 @@ export function ServicesPreview() {
             transition={{ duration: 0.5, delay: i * 0.06 }}
             className="group relative overflow-hidden rounded-2xl border-2 border-ink bg-white"
           >
-            <div className="aspect-[4/3] overflow-hidden">
-              <img
-                src={service.image_url}
-                alt={service.title}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+            <div className="aspect-[4/3] overflow-hidden bg-ink/5">
+              {service.image_url ? (
+                <img
+                  src={service.image_url}
+                  alt={service.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              ) : (
+                <div className="h-full w-full flex items-center justify-center">
+                  <span className="font-display text-2xl text-ink/30">{service.title}</span>
+                </div>
+              )}
             </div>
             <div className="p-5">
               <h3 className="font-display text-xl text-ink mb-1">{service.title}</h3>

@@ -10,8 +10,14 @@ export function ServiceCard({ service, onBook, index = 0 }: { service: Service; 
       transition={{ duration: 0.5, delay: index * 0.07 }}
       className="group flex flex-col overflow-hidden rounded-3xl border-2 border-ink bg-white"
     >
-      <div className="aspect-[16/10] overflow-hidden">
-        <img src={service.image_url} alt={service.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+      <div className="aspect-[16/10] overflow-hidden bg-ink/5">
+        {service.image_url ? (
+          <img src={service.image_url} alt={service.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+        ) : (
+          <div className="h-full w-full flex items-center justify-center">
+            <span className="font-display text-3xl text-ink/30">{service.title}</span>
+          </div>
+        )}
       </div>
       <div className="flex flex-1 flex-col p-6">
         <h3 className="font-display text-2xl text-ink mb-2">{service.title}</h3>

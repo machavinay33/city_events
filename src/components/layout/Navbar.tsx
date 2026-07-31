@@ -74,7 +74,7 @@ export function Navbar() {
         </div>
 
         <button
-          className="lg:hidden rounded-full border-2 border-ink p-2 text-ink"
+          className="lg:hidden rounded-full border-2 border-ink p-2.5 text-ink active:scale-95 transition-transform"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
           aria-expanded={open}
@@ -91,7 +91,7 @@ export function Navbar() {
             exit={{ height: 0, opacity: 0 }}
             className="lg:hidden overflow-hidden border-t-2 border-ink bg-paper"
           >
-            <div className="container-ce flex flex-col py-4">
+            <div className="container-ce flex flex-col py-5">
               {LINKS.map((link) => (
                 <NavLink
                   key={link.to}
@@ -100,7 +100,7 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   className={({ isActive }) =>
                     cn(
-                      'py-3 text-lg font-semibold border-b border-line',
+                      'py-3.5 text-base font-semibold border-b border-line active:bg-ink/5 rounded-lg px-3 -mx-3',
                       isActive ? 'text-chili' : 'text-ink',
                     )
                   }

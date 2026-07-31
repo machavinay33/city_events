@@ -9,7 +9,7 @@ export function TestimonialCard({ testimonial, index = 0 }: { testimonial: Testi
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5, delay: index * 0.07 }}
-      className="relative rounded-2xl border-2 border-ink bg-white p-6"
+      className="relative rounded-2xl border-2 border-ink bg-white p-5 sm:p-6"
     >
       <Quote size={28} className="text-gold mb-3" />
       <p className="text-ink/80 mb-5">{testimonial.quote}</p>

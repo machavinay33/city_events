@@ -10,13 +10,13 @@ const REASONS = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-16 sm:py-24 bg-ink text-paper">
+    <section className="py-12 sm:py-20 bg-ink text-paper">
       <div className="container-ce">
-        <div className="mb-12 max-w-xl">
+        <div className="mb-8 sm:mb-12 max-w-xl">
           <p className="eyebrow mb-3 text-gold">Why City Events</p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl leading-[1.05]">Made for the crowd that shows up</h2>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl leading-[1.05]">Made for the crowd that shows up</h2>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {REASONS.map((reason, i) => (
             <motion.div
               key={reason.title}

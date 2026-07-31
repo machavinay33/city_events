@@ -8,7 +8,7 @@ export function Footer() {
 
   return (
     <footer className="relative border-t-2 border-ink bg-ink text-paper">
-      <div className="container-ce py-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="container-ce py-10 sm:py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div>
           <Link to="/" className="flex items-center gap-3 mb-4">
             <img

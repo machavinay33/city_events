@@ -16,7 +16,7 @@ export function Hero() {
   const nextEvent = events[0]
 
   return (
-    <section className="relative overflow-hidden bg-paper pt-28 sm:pt-36 pb-16">
+    <section className="relative overflow-hidden bg-paper pt-24 sm:pt-32 pb-12">
       <div className="absolute inset-0 bg-dots bg-dots opacity-40" />
       <div className="pointer-events-none absolute -top-10 left-6 text-gold-300 hidden sm:block">
         <PartyPopper size={64} className="animate-floatSlow" style={{ ['--r' as any]: '-12deg' }} />
@@ -25,7 +25,7 @@ export function Hero() {
         <Star size={40} className="animate-floatSlow" style={{ ['--r' as any]: '10deg', animationDelay: '1s' }} />
       </div>
 
-      <div className="container-ce relative grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+      <div className="container-ce relative grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-12 items-center">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 14 }}
@@ -37,7 +37,7 @@ export function Hero() {
             <span className="font-mono text-xs uppercase tracking-wider">Nagpur's Live Events Collective</span>
           </motion.div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl leading-[0.98] text-ink whitespace-pre-line">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl leading-[0.98] text-ink whitespace-pre-line">
             {home.hero_title.split('\n').map((line, i) => (
               <motion.span
                 key={i}
@@ -55,7 +55,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-6 max-w-lg text-lg text-ink/70"
+            className="mt-5 max-w-lg text-base sm:text-lg text-ink/70"
           >
             {home.hero_subtitle}
           </motion.p>
@@ -68,7 +68,7 @@ export function Hero() {
           >
             <Link
               to="/events"
-              className="inline-flex items-center rounded-full bg-chili px-7 py-3.5 font-bold text-paper shadow-[0_6px_0_0_#0D1120] hover:translate-y-[3px] hover:shadow-[0_3px_0_0_#0D1120] transition-all"
+              className="inline-flex items-center rounded-full bg-chili px-5 py-3 sm:px-7 sm:py-3.5 font-bold text-paper shadow-[0_4px_0_0_#0D1120] hover:translate-y-[3px] hover:shadow-[0_3px_0_0_#0D1120] transition-all text-sm sm:text-base"
             >
               See Upcoming Events
             </Link>
@@ -86,7 +86,7 @@ export function Hero() {
           animate={{ opacity: 1, scale: 1, rotate: -3 }}
           transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
           whileHover={{ rotate: 0 }}
-          className="relative mx-auto w-full max-w-sm"
+          className="relative mx-auto w-full max-w-xs sm:max-w-sm mt-8 lg:mt-0"
         >
           <div className="ticket-edge relative overflow-hidden rounded-3xl border-2 border-ink bg-white shadow-ticket">
             {home.hero_media_url && (

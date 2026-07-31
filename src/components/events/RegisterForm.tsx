@@ -65,7 +65,7 @@ export function RegisterModal({ event, onClose }: { event: EventItem | null; onC
             <label className={labelClass}>Full Name</label>
             <input required className={inputClass} value={form.full_name} onChange={(e) => setForm({ ...form, full_name: e.target.value })} />
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className={labelClass}>Phone Number</label>
               <input required type="tel" className={inputClass} value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />

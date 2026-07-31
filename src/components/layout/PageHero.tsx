@@ -13,7 +13,7 @@ export function PageHero({ page, eyebrow, title, description }: PageHeroProps) {
   const { data: cover } = usePageCover(page)
 
   return (
-    <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden bg-ink text-paper">
+    <section className="relative pt-28 pb-14 sm:pt-40 sm:pb-28 overflow-hidden bg-ink text-paper">
       <div className="absolute inset-0 opacity-25">
         <img src={cover.image_url} alt="" className="h-full w-full object-cover" />
       </div>
@@ -31,7 +31,7 @@ export function PageHero({ page, eyebrow, title, description }: PageHeroProps) {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-6xl leading-[1.02] max-w-3xl"
+          className="text-3xl sm:text-5xl lg:text-6xl leading-[1.02] max-w-3xl"
         >
           {title}
         </motion.h1>
