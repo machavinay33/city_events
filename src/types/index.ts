@@ -29,6 +29,8 @@ export interface HomepageContent {
   why_us_eyebrow: string
   why_us_title: string
   why_us_reasons: WhyUsReason[]
+  highlight_video_url: string
+  highlight_video_title: string
   stats: StatItem[]
   featured_service_ids: string[]
   featured_event_ids: string[]
