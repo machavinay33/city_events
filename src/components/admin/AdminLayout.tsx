@@ -30,7 +30,7 @@ export function AdminLayout({ children }: PropsWithChildren) {
   }
 
   return (
-    <div className="flex min-h-screen bg-paper">
+    <div className="flex min-h-screen bg-paper text-ink">
       <aside className="hidden lg:flex w-64 shrink-0 flex-col border-r-2 border-ink bg-ink text-paper">
         <div className="flex items-center gap-3 px-5 py-5 border-b border-paper/15">
           <img src="/assets/logo/city-events-logo.jpeg" alt="" className="h-9 w-9 rounded-lg border-2 border-gold object-cover" />

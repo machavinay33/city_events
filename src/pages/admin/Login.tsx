@@ -30,7 +30,7 @@ export default function AdminLogin() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-ink px-4">
-      <div className="w-full max-w-sm rounded-3xl border-2 border-gold bg-paper p-8 shadow-ticket">
+      <div className="w-full max-w-sm rounded-3xl border-2 border-gold bg-paper p-8 shadow-ticket text-ink">
         <div className="mb-6 flex flex-col items-center text-center">
           <img src="/assets/logo/city-events-logo.jpeg" alt="City Events" className="h-14 w-14 rounded-xl border-2 border-ink object-cover mb-3" />
           <h1 className="font-display text-2xl text-ink">Admin Sign In</h1>
