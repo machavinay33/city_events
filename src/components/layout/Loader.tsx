@@ -12,7 +12,7 @@ export function Loader() {
     const t = setTimeout(() => {
       setShow(false)
       sessionStorage.setItem('ce-loaded', '1')
-    }, 900)
+    }, 1000)
     return () => clearTimeout(t)
   }, [show])
 
@@ -24,14 +24,21 @@ export function Loader() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <motion.img
-            src="/assets/logo/city-events-logo.jpeg"
-            alt=""
-            className="h-20 w-20 rounded-2xl border-2 border-gold"
-            initial={{ scale: 0.7, opacity: 0, rotate: -8 }}
-            animate={{ scale: 1, opacity: 1, rotate: 0 }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-          />
+          <div className="relative">
+            <motion.div
+              className="absolute inset-0 rounded-2xl bg-gold blur-2xl"
+              animate={{ opacity: [0.4, 0.8, 0.4], scale: [1, 1.15, 1] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+            />
+            <motion.img
+              src="/assets/logo/city-events-logo.jpeg"
+              alt=""
+              className="relative h-20 w-20 rounded-2xl border-2 border-gold"
+              initial={{ scale: 0.7, opacity: 0, rotate: -8 }}
+              animate={{ scale: 1, opacity: 1, rotate: 0 }}
+              transition={{ duration: 0.5, ease: 'easeOut' }}
+            />
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom'
 import { Instagram, Mail, Phone, MapPin } from 'lucide-react'
 import { useSiteSettings } from '@/hooks/useContent'
+import { GradientMesh } from '@/components/ui/GradientMesh'
 
 export function Footer() {
   const { data: settings } = useSiteSettings()
   const year = new Date().getFullYear()
 
   return (
-    <footer className="relative border-t-2 border-ink bg-ink text-paper">
-      <div className="container-ce py-10 sm:py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="relative overflow-hidden border-t-2 border-ink bg-ink text-paper">
+      <GradientMesh variant="dark" className="opacity-60" />
+      <div className="container-ce relative py-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link to="/" className="flex items-center gap-3 mb-4">
             <img

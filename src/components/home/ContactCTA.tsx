@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { GradientMesh } from '@/components/ui/GradientMesh'
 
 export function ContactCTA() {
   return (
@@ -10,19 +11,23 @@ export function ContactCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6 }}
-          className="relative overflow-hidden rounded-3xl border-2 border-ink bg-ink px-5 sm:px-8 py-10 sm:py-20 text-center text-paper"
+          className="relative overflow-hidden rounded-3xl border-2 border-ink bg-ink px-8 py-14 sm:py-20 text-center text-paper"
         >
+          <GradientMesh variant="dark" />
           <div className="absolute inset-0 bg-dots bg-dots opacity-10" />
-          <p className="eyebrow mb-4 text-gold">Let's make it happen</p>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl leading-tight mb-6 max-w-2xl mx-auto">
-            Got an event in mind? Let's put City Events on stage.
-          </h2>
-          <Link
-            to="/contact"
-            className="inline-flex items-center rounded-full bg-chili px-6 py-3 sm:px-8 sm:py-4 font-bold text-paper shadow-[0_4px_0_0_#F0B429] hover:translate-y-[3px] hover:shadow-[0_3px_0_0_#F0B429] transition-all text-sm sm:text-base"
-          >
-            Talk to us
-          </Link>
+          <div className="relative">
+            <p className="eyebrow mb-4 text-gold">Let's make it happen</p>
+            <h2 className="text-3xl sm:text-5xl leading-tight mb-6 max-w-2xl mx-auto">
+              Got an event in mind? Let's put City Events on stage.
+            </h2>
+            <Link
+              to="/contact"
+              className="group relative inline-flex items-center overflow-hidden rounded-full bg-chili px-8 py-4 font-bold text-paper shadow-[0_6px_0_0_#F0B429] hover:translate-y-[3px] hover:shadow-[0_3px_0_0_#F0B429] transition-all"
+            >
+              <span className="absolute inset-0 -translate-x-full bg-white/25 skew-x-12 transition-transform duration-500 group-hover:translate-x-full" />
+              <span className="relative">Talk to us</span>
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

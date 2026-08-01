@@ -44,19 +44,68 @@
   .ticket-edge::before { left: -11px; }
   .ticket-edge::after { right: -11px; }
 
-  @media (max-width: 640px) {
-    .ticket-edge::before,
-    .ticket-edge::after {
-      width: 16px;
-      height: 16px;
-    }
-    .ticket-edge::before { left: -8px; }
-    .ticket-edge::after { right: -8px; }
-  }
-
   .eyebrow {
     @apply font-mono text-xs uppercase tracking-[0.25em] text-chili;
   }
+
+  /* Glassmorphism — light surface (used on paper background) */
+  .glass {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  /* Glassmorphism — dark surface (used on ink background) */
+  .glass-dark {
+    background: rgba(27, 36, 64, 0.55);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid rgba(240, 180, 41, 0.15);
+  }
+
+  /* Glassmorphism — gold-tinted accent surface */
+  .glass-gold {
+    background: rgba(240, 180, 41, 0.12);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(240, 180, 41, 0.35);
+  }
+
+  .gradient-text {
+    background: linear-gradient(100deg, #F0B429 0%, #E14B3C 55%, #F0B429 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 6s ease infinite;
+  }
+
+  .noise-overlay {
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Custom scrollbar — gold thumb on navy track */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1B2440;
+}
+::-webkit-scrollbar-thumb {
+  background: #F0B429;
+  border-radius: 999px;
+  border: 2px solid #1B2440;
+}
+html {
+  scrollbar-color: #F0B429 #1B2440;
 }
 
 @media (prefers-reduced-motion: reduce) {

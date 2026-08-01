@@ -48,6 +48,13 @@ export default {
       },
       boxShadow: {
         ticket: '0 10px 0 -2px rgba(27,36,64,0.06), 0 20px 40px -12px rgba(27,36,64,0.35)',
+        glass: '0 8px 32px 0 rgba(13,17,32,0.28)',
+        glow: '0 0 0 1px rgba(240,180,41,0.4), 0 0 40px -8px rgba(240,180,41,0.55)',
+        'glow-lg': '0 0 0 1px rgba(240,180,41,0.35), 0 20px 60px -12px rgba(240,180,41,0.4), 0 8px 24px -8px rgba(13,17,32,0.5)',
+        'inner-glow': 'inset 0 1px 0 0 rgba(255,255,255,0.4)',
+      },
+      backdropBlur: {
+        xs: '2px',
       },
       keyframes: {
         marquee: {
@@ -58,10 +65,32 @@ export default {
           '0%, 100%': { transform: 'translateY(0) rotate(var(--r, -3deg))' },
           '50%': { transform: 'translateY(-10px) rotate(var(--r, -3deg))' },
         },
+        blob: {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+          '33%': { transform: 'translate(4%, -6%) scale(1.08)' },
+          '66%': { transform: 'translate(-3%, 4%) scale(0.95)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        glowPulse: {
+          '0%, 100%': { opacity: '0.5', transform: 'scale(1)' },
+          '50%': { opacity: '0.9', transform: 'scale(1.04)' },
+        },
+        gradientShift: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
       },
       animation: {
         marquee: 'marquee 28s linear infinite',
         floatSlow: 'floatSlow 6s ease-in-out infinite',
+        blob: 'blob 16s ease-in-out infinite',
+        'blob-delay': 'blob 20s ease-in-out infinite 2s',
+        shimmer: 'shimmer 2.5s linear infinite',
+        glowPulse: 'glowPulse 4s ease-in-out infinite',
+        gradientShift: 'gradientShift 8s ease infinite',
       },
     },
   },

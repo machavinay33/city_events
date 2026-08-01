@@ -35,13 +35,13 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
             exit={{ opacity: 0 }}
           />
           <motion.div
-            className="relative w-full sm:max-w-lg max-h-[90vh] overflow-y-auto rounded-t-3xl sm:rounded-3xl border-2 border-ink bg-paper shadow-ticket"
+            className="relative w-full sm:max-w-lg max-h-[92vh] overflow-y-auto rounded-t-3xl sm:rounded-3xl border-2 border-ink glass shadow-glow-lg"
             initial={{ y: 60, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 40, opacity: 0 }}
             transition={{ type: 'spring', damping: 26, stiffness: 260 }}
           >
-            <div className="sticky top-0 z-10 flex items-center justify-between border-b-2 border-dashed border-ink/30 bg-paper px-6 py-4">
+            <div className="sticky top-0 z-10 flex items-center justify-between border-b-2 border-dashed border-ink/30 glass px-6 py-4">
               <h3 className="text-xl text-ink">{title}</h3>
               <button
                 onClick={onClose}
@@ -51,7 +51,7 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
                 <X size={20} />
               </button>
             </div>
-            <div className="p-5 sm:p-6">{children}</div>
+            <div className="p-6">{children}</div>
           </motion.div>
         </motion.div>
       )}
