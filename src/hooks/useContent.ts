@@ -81,8 +81,8 @@ export function useServices() {
       .select('*')
       .eq('is_active', true)
       .order('order_index', { ascending: true })
-    if (error || !data || data.length === 0) throw error ?? new Error('empty')
-    return data as Service[]
+    if (error) throw error
+    return (data ?? []) as Service[]
   })
 }
 
@@ -93,8 +93,8 @@ export function useEvents() {
       .select('*')
       .eq('is_active', true)
       .order('event_date', { ascending: true })
-    if (error || !data || data.length === 0) throw error ?? new Error('empty')
-    return data as EventItem[]
+    if (error) throw error
+    return (data ?? []) as EventItem[]
   })
 }
 
@@ -104,8 +104,8 @@ export function useGallery() {
       .from('gallery_media')
       .select('*')
       .order('order_index', { ascending: true })
-    if (error || !data || data.length === 0) throw error ?? new Error('empty')
-    return data as GalleryMedia[]
+    if (error) throw error
+    return (data ?? []) as GalleryMedia[]
   })
 }
 
@@ -116,8 +116,8 @@ export function useTestimonials() {
       .select('*')
       .eq('is_active', true)
       .order('order_index', { ascending: true })
-    if (error || !data || data.length === 0) throw error ?? new Error('empty')
-    return data as Testimonial[]
+    if (error) throw error
+    return (data ?? []) as Testimonial[]
   })
 }
 
@@ -128,7 +128,7 @@ export function usePastPerformances() {
       .select('*')
       .eq('is_active', true)
       .order('order_index', { ascending: true })
-    if (error || !data || data.length === 0) throw error ?? new Error('empty')
-    return data as PastPerformance[]
+    if (error) throw error
+    return (data ?? []) as PastPerformance[]
   })
 }
