@@ -1,3 +1,5 @@
+sql
+
 -- ============================================================================
 -- CITY EVENTS — SUPABASE SCHEMA
 -- ============================================================================
@@ -52,12 +54,20 @@ create trigger trg_site_settings_updated before update on site_settings
 -- ---------------------------------------------------------------------------
 create table if not exists homepage_content (
   id int primary key default 1,
-  hero_title text not null default 'Live Moments,\nMade in Nagpur',
+  hero_title text not null default E'Live Moments,\nMade in Nagpur',
   hero_subtitle text not null default 'Music nights, comedy sets, poetry evenings and more — City Events brings the city together, one stage at a time.',
   hero_media_url text not null default '/assets/events/live-music-night-poster.jpeg',
   hero_media_type text not null default 'image' check (hero_media_type in ('image','video')),
   about_title text not null default 'We build nights people talk about for weeks',
   about_body text not null default 'City Events is a Nagpur-based live events collective. We host open-mic music nights, stand-up comedy, poetry circles, bhajan jam sessions and art lecture evenings at cafes and venues across the city — free to attend, open to everyone.',
+  why_us_eyebrow text not null default 'Why City Events',
+  why_us_title text not null default 'Made for the crowd that shows up',
+  why_us_reasons jsonb not null default '[
+    {"title":"Curated, not generic","body":"Every lineup is hand-picked from Nagpur’s own artists — no filler acts."},
+    {"title":"Built for community","body":"Free-entry, open-for-all nights designed so anyone can walk in and join."},
+    {"title":"Local, always","body":"Cafes, rooftops and street corners across Nagpur — we know the city."},
+    {"title":"Easy to book","body":"One form, no back-and-forth. We handle the setup, sound and schedule."}
+  ]',
   stats jsonb not null default '[{"label":"Events Hosted","value":40},{"label":"Artists Featured","value":75},{"label":"Happy Attendees","value":5000},{"label":"Venue Partners","value":12}]',
   featured_service_ids uuid[] not null default '{}',
   featured_event_ids uuid[] not null default '{}',
@@ -66,6 +76,23 @@ create table if not exists homepage_content (
   constraint single_row_home check (id = 1)
 );
 insert into homepage_content (id) values (1) on conflict (id) do nothing;
+
+-- Safe to re-run: adds the new columns even if this table already existed
+-- from an earlier version of this schema (won't touch any of your edited content).
+alter table homepage_content add column if not exists why_us_eyebrow text not null default 'Why City Events';
+alter table homepage_content add column if not exists why_us_title text not null default 'Made for the crowd that shows up';
+alter table homepage_content add column if not exists why_us_reasons jsonb not null default '[
+    {"title":"Curated, not generic","body":"Every lineup is hand-picked from Nagpur’s own artists — no filler acts."},
+    {"title":"Built for community","body":"Free-entry, open-for-all nights designed so anyone can walk in and join."},
+    {"title":"Local, always","body":"Cafes, rooftops and street corners across Nagpur — we know the city."},
+    {"title":"Easy to book","body":"One form, no back-and-forth. We handle the setup, sound and schedule."}
+  ]';
+
+-- Fixes existing rows where hero_title was saved with a literal backslash-n
+-- (from an earlier buggy version of this script) instead of a real line break.
+update homepage_content
+  set hero_title = E'Live Moments,\nMade in Nagpur'
+  where hero_title = 'Live Moments,\nMade in Nagpur';
 
 drop trigger if exists trg_homepage_updated on homepage_content;
 create trigger trg_homepage_updated before update on homepage_content
@@ -335,3 +362,138 @@ create policy "admin delete media bucket" on storage.objects
 -- ============================================================================
 -- DONE. Next: Authentication -> Users -> Add user (this becomes your admin login)
 -- ============================================================================
+
+Frontend files (replace each in full)
+
+src/types/index.ts
+
+export interface SiteSettings {
+  company_name: string
+  phone: string
+  email: string
+  instagram_url: string
+  whatsapp_number: string
+  google_maps_embed: string
+  address: string
+  about_business: string
+}
+
+export interface StatItem {
+  label: string
+  value: number
+}
+
+export interface WhyUsReason {
+  title: string
+  body: string
+}
+
+export interface HomepageContent {
+  hero_title: string
+  hero_subtitle: string
+  hero_media_url: string
+  hero_media_type: 'image' | 'video'
+  about_title: string
+  about_body: string
+  why_us_eyebrow: string
+  why_us_title: string
+  why_us_reasons: WhyUsReason[]
+  stats: StatItem[]
+  featured_service_ids: string[]
+  featured_event_ids: string[]
+  section_order: string[]
+}
+
+export type PageKey =
+  | 'home' | 'about' | 'services' | 'events' | 'gallery' | 'testimonials' | 'contact'
+
+export interface PageCover {
+  page_key: PageKey
+  image_url: string
+}
+
+export interface Service {
+  id: string
+  title: string
+  slug: string
+  description: string
+  image_url: string
+  order_index: number
+  is_active: boolean
+}
+
+export interface EventItem {
+  id: string
+  title: string
+  slug: string
+  description: string
+  poster_url: string
+  cover_url: string
+  venue: string
+  event_date: string
+  event_time: string
+  total_seats: number
+  remaining_seats: number
+  is_featured: boolean
+  is_active: boolean
+}
+
+export type BookingStatus = 'new' | 'contacted' | 'confirmed' | 'completed' | 'cancelled'
+
+export interface Booking {
+  id: string
+  full_name: string
+  phone: string
+  email: string
+  event_date: string | null
+  preferred_time: string | null
+  event_location: string | null
+  event_type: string | null
+  audience_size: string | null
+  budget: string | null
+  service_id: string | null
+  service_title: string | null
+  additional_requirements: string | null
+  status: BookingStatus
+  internal_notes: string
+  created_at: string
+}
+
+export interface EventRegistration {
+  id: string
+  event_id: string | null
+  event_title: string | null
+  full_name: string
+  phone: string
+  email: string
+  attendees: number
+  notes: string
+  created_at: string
+}
+
+export interface GalleryMedia {
+  id: string
+  url: string
+  media_type: 'image' | 'video'
+  caption: string
+  order_index: number
+}
+
+export interface Testimonial {
+  id: string
+  name: string
+  quote: string
+  photo_url: string
+  rating: number
+  order_index: number
+  is_active: boolean
+}
+
+export interface MediaLibraryItem {
+  id: string
+  url: string
+  file_name: string
+  file_type: string
+  size_bytes: number
+  created_at: string
+}

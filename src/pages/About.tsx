@@ -18,7 +18,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl text-lg text-ink/70 leading-relaxed"
+          className="max-w-3xl text-lg text-paper/70 leading-relaxed"
         >
           {home.about_body} We believe the best nights aren't the most expensive ones — they're the ones where a
           room full of strangers ends up singing the same chorus. Every City Events night is designed around that:

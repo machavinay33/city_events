@@ -33,7 +33,7 @@ export function Navbar() {
         transition={{ duration: 0.5 }}
         className={cn(
           'transition-all duration-500',
-          scrolled ? 'mx-3 mt-3 sm:mx-6 sm:mt-4 rounded-2xl glass shadow-glass' : 'bg-transparent',
+          scrolled ? 'mx-3 mt-3 sm:mx-6 sm:mt-4 rounded-2xl glass-dark shadow-glass' : 'bg-transparent',
         )}
       >
         <div className="container-ce flex items-center justify-between py-3">
@@ -43,10 +43,10 @@ export function Navbar() {
               <img
                 src="/assets/logo/city-events-logo.jpeg"
                 alt="City Events logo"
-                className="relative h-11 w-11 rounded-lg border-2 border-ink object-cover transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3"
+                className="relative h-11 w-11 rounded-lg border-2 border-gold object-cover transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3"
               />
             </div>
-            <span className="font-display text-xl text-ink leading-none hidden sm:block">City Events</span>
+            <span className="font-display text-xl text-paper leading-none hidden sm:block">City Events</span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
@@ -58,7 +58,7 @@ export function Navbar() {
                 className={({ isActive }) =>
                   cn(
                     'relative px-4 py-2 text-sm font-semibold uppercase tracking-wide rounded-full transition-colors',
-                    isActive ? 'text-ink' : 'text-ink/70 hover:text-ink',
+                    isActive ? 'text-ink' : 'text-paper/70 hover:text-paper',
                   )
                 }
               >
@@ -89,7 +89,7 @@ export function Navbar() {
           </div>
 
           <button
-            className="lg:hidden rounded-full border-2 border-ink p-2 text-ink"
+            className="lg:hidden rounded-full border-2 border-gold p-2 text-gold"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
@@ -104,7 +104,7 @@ export function Navbar() {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="lg:hidden overflow-hidden border-t border-ink/10"
+              className="lg:hidden overflow-hidden border-t border-gold/15 glass-dark"
             >
               <div className="container-ce flex flex-col py-4">
                 {LINKS.map((link, i) => (
@@ -120,8 +120,8 @@ export function Navbar() {
                       onClick={() => setOpen(false)}
                       className={({ isActive }) =>
                         cn(
-                          'block py-3 text-lg font-semibold border-b border-line',
-                          isActive ? 'text-chili' : 'text-ink',
+                          'block py-3 text-lg font-semibold border-b border-gold/10',
+                          isActive ? 'text-gold' : 'text-paper',
                         )
                       }
                     >

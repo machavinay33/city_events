@@ -20,7 +20,7 @@ export function EventsPreview() {
         ))}
       </div>
       <div className="mt-8 text-center">
-        <Link to="/events" className="inline-flex items-center gap-2 font-bold text-chili hover:text-ink transition-colors">
+        <Link to="/events" className="inline-flex items-center gap-2 font-bold text-gold hover:text-chili transition-colors">
           View all events <span aria-hidden>→</span>
         </Link>
       </div>

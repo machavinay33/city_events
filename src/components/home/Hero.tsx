@@ -23,10 +23,14 @@ export function Hero() {
   const yCard = useTransform(scrollYProgress, [0, 1], ['0%', '18%'])
   const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
+  // hero_title may contain a real newline (splits into two lines, second
+  // one gets the gradient highlight) or just be a single line — both work.
+  const titleLines = home.hero_title.split('\n')
+
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-paper pt-28 sm:pt-36 pb-16">
-      <GradientMesh variant="light" />
-      <motion.div style={{ y: yBg }} className="absolute inset-0 bg-dots bg-dots opacity-30" />
+    <section ref={sectionRef} className="relative overflow-hidden bg-ink pt-28 sm:pt-36 pb-16">
+      <GradientMesh variant="dark" />
+      <motion.div style={{ y: yBg }} className="absolute inset-0 bg-dots-dark opacity-40" />
 
       <div className="pointer-events-none absolute -top-10 left-6 text-gold-300 hidden sm:block">
         <PartyPopper size={64} className="animate-floatSlow drop-shadow-lg" style={{ ['--r' as any]: '-12deg' }} />
@@ -36,19 +40,19 @@ export function Hero() {
       </div>
 
       <motion.div style={{ opacity: fade }} className="container-ce relative grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
-        <div>
+        <div className="min-w-0">
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-5 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 shadow-glass"
+            className="mb-5 inline-flex items-center gap-2 rounded-full glass-dark px-4 py-1.5 shadow-glass max-w-full"
           >
-            <Sparkles size={14} className="text-chili" />
-            <span className="font-mono text-xs uppercase tracking-wider text-ink">Nagpur's Live Events Collective</span>
+            <Sparkles size={14} className="text-gold shrink-0" />
+            <span className="font-mono text-xs uppercase tracking-wider text-paper truncate">Nagpur's Live Events Collective</span>
           </motion.div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl leading-[0.98] text-ink whitespace-pre-line">
-            {home.hero_title.split('\n').map((line, i) => (
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl leading-[1.05] sm:leading-[0.98] text-paper break-words">
+            {titleLines.map((line, i) => (
               <motion.span
                 key={i}
                 className="block"
@@ -65,7 +69,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-6 max-w-lg text-lg text-ink/70"
+            className="mt-6 max-w-lg text-lg text-paper/70"
           >
             {home.hero_subtitle}
           </motion.p>
@@ -74,18 +78,18 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-8 flex flex-wrap gap-4"
+            className="mt-8 flex flex-col sm:flex-row gap-4"
           >
             <Link
               to="/events"
-              className="group relative inline-flex items-center overflow-hidden rounded-full bg-chili px-7 py-3.5 font-bold text-paper shadow-[0_6px_0_0_#0D1120] hover:translate-y-[3px] hover:shadow-[0_3px_0_0_#0D1120] transition-all"
+              className="group relative inline-flex w-full sm:w-auto items-center justify-center overflow-hidden rounded-full bg-chili px-7 py-3.5 font-bold text-paper shadow-[0_6px_0_0_#0D1120] hover:translate-y-[3px] hover:shadow-[0_3px_0_0_#0D1120] transition-all"
             >
               <span className="absolute inset-0 -translate-x-full bg-white/25 skew-x-12 transition-transform duration-500 group-hover:translate-x-full" />
               <span className="relative flex items-center gap-2"><Mic2 size={16} /> See Upcoming Events</span>
             </Link>
             <Link
               to="/services"
-              className="inline-flex items-center rounded-full glass px-7 py-3.5 font-bold text-ink shadow-glass hover:shadow-glow transition-shadow"
+              className="inline-flex w-full sm:w-auto items-center justify-center rounded-full border-2 border-gold px-7 py-3.5 font-bold text-gold hover:bg-gold hover:text-ink transition-colors"
             >
               Book a Service
             </Link>
@@ -118,7 +122,7 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      <div className="relative mt-16 border-y-2 border-ink bg-ink py-3 overflow-hidden">
+      <div className="relative mt-16 border-y-2 border-gold/20 bg-ink py-3 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-transparent to-ink z-10 pointer-events-none" />
         <div className="flex w-max animate-marquee gap-10 whitespace-nowrap">
           {[...MARQUEE_ITEMS, ...MARQUEE_ITEMS].map((item, i) => (

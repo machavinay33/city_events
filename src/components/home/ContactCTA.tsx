@@ -11,7 +11,7 @@ export function ContactCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6 }}
-          className="relative overflow-hidden rounded-3xl border-2 border-ink bg-ink px-8 py-14 sm:py-20 text-center text-paper"
+          className="relative overflow-hidden rounded-3xl border-2 border-gold/25 bg-ink px-8 py-14 sm:py-20 text-center text-paper"
         >
           <GradientMesh variant="dark" />
           <div className="absolute inset-0 bg-dots bg-dots opacity-10" />

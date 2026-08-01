@@ -6,7 +6,7 @@ export function AboutPreview() {
   const { data: home } = useHomepageContent()
 
   return (
-    <section className="py-12 sm:py-20">
+    <section className="py-16 sm:py-24">
       <div className="container-ce grid lg:grid-cols-2 gap-10 items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,11 +15,11 @@ export function AboutPreview() {
           transition={{ duration: 0.6 }}
         >
           <p className="eyebrow mb-3">Who we are</p>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl leading-[1.05] text-ink mb-4">{home.about_title}</h2>
-          <p className="text-ink/70 text-base sm:text-lg mb-6">{home.about_body}</p>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl leading-[1.05] text-paper mb-5">{home.about_title}</h2>
+          <p className="text-paper/70 text-lg mb-7">{home.about_body}</p>
           <Link
             to="/about"
-            className="inline-flex items-center gap-2 font-bold text-chili hover:text-ink transition-colors"
+            className="inline-flex items-center gap-2 font-bold text-gold hover:text-chili transition-colors"
           >
             More about City Events <span aria-hidden>→</span>
           </Link>
@@ -32,9 +32,9 @@ export function AboutPreview() {
           transition={{ duration: 0.6 }}
           className="grid grid-cols-2 gap-4"
         >
-          <img src={home.hero_media_url || '/assets/gallery/gallery-04.jpeg'} alt="" className="col-span-2 h-48 sm:h-56 w-full rounded-2xl border-2 border-ink object-cover" />
-          <img src="/assets/gallery/gallery-03.jpeg" alt="" className="h-32 sm:h-40 w-full rounded-2xl border-2 border-ink object-cover" />
-          <img src="/assets/gallery/gallery-01.jpeg" alt="" className="h-32 sm:h-40 w-full rounded-2xl border-2 border-ink object-cover" />
+          <img src="/assets/gallery/gallery-04.jpeg" alt="" className="col-span-2 h-48 sm:h-56 w-full rounded-2xl border-2 border-gold/30 object-cover" />
+          <img src="/assets/gallery/gallery-03.jpeg" alt="" className="h-32 sm:h-40 w-full rounded-2xl border-2 border-gold/30 object-cover" />
+          <img src="/assets/gallery/gallery-01.jpeg" alt="" className="h-32 sm:h-40 w-full rounded-2xl border-2 border-gold/30 object-cover" />
         </motion.div>
       </div>
     </section>

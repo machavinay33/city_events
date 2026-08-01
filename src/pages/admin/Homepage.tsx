@@ -103,6 +103,48 @@ export default function AdminHomepage() {
         </section>
 
         <section className="rounded-2xl border-2 border-ink bg-white p-6">
+          <h2 className="font-display text-xl text-ink mb-4">Why Choose Us Section</h2>
+          <div className="grid sm:grid-cols-2 gap-4 mb-5">
+            <div>
+              <label className={labelClass}>Eyebrow (small label above the title)</label>
+              <input className={inputClass} value={content.why_us_eyebrow} onChange={(e) => setContent({ ...content, why_us_eyebrow: e.target.value })} />
+            </div>
+            <div>
+              <label className={labelClass}>Section Title</label>
+              <input className={inputClass} value={content.why_us_title} onChange={(e) => setContent({ ...content, why_us_title: e.target.value })} />
+            </div>
+          </div>
+          <div className="space-y-4">
+            {content.why_us_reasons.map((reason, i) => (
+              <div key={i} className="rounded-xl border border-ink/15 p-4">
+                <p className="mb-2 text-xs font-mono uppercase tracking-wider text-ink/50">Card {i + 1}</p>
+                <label className={labelClass}>Title</label>
+                <input
+                  className={`${inputClass} mb-3`}
+                  value={reason.title}
+                  onChange={(e) => {
+                    const reasons = [...content.why_us_reasons]
+                    reasons[i] = { ...reasons[i], title: e.target.value }
+                    setContent({ ...content, why_us_reasons: reasons })
+                  }}
+                />
+                <label className={labelClass}>Body</label>
+                <textarea
+                  rows={2}
+                  className={inputClass}
+                  value={reason.body}
+                  onChange={(e) => {
+                    const reasons = [...content.why_us_reasons]
+                    reasons[i] = { ...reasons[i], body: e.target.value }
+                    setContent({ ...content, why_us_reasons: reasons })
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="rounded-2xl border-2 border-ink bg-white p-6">
           <h2 className="font-display text-xl text-ink mb-4">Animated Statistics</h2>
           <div className="space-y-3">
             {content.stats.map((stat, i) => (

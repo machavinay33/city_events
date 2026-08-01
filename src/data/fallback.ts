@@ -30,6 +30,14 @@ export const FALLBACK_HOMEPAGE: HomepageContent = {
   about_title: 'We build nights people talk about for weeks',
   about_body:
     'City Events is a Nagpur-based live events collective. We host open-mic music nights, stand-up comedy, poetry circles, bhajan jam sessions and art lecture evenings at cafes and venues across the city — free to attend, open to everyone.',
+  why_us_eyebrow: 'Why City Events',
+  why_us_title: 'Made for the crowd that shows up',
+  why_us_reasons: [
+    { title: 'Curated, not generic', body: 'Every lineup is hand-picked from Nagpur\u2019s own artists — no filler acts.' },
+    { title: 'Built for community', body: 'Free-entry, open-for-all nights designed so anyone can walk in and join.' },
+    { title: 'Local, always', body: 'Cafes, rooftops and street corners across Nagpur — we know the city.' },
+    { title: 'Easy to book', body: 'One form, no back-and-forth. We handle the setup, sound and schedule.' },
+  ],
   stats: [
     { label: 'Events Hosted', value: 40 },
     { label: 'Artists Featured', value: 75 },

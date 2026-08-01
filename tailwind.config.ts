@@ -42,9 +42,11 @@ export default {
       },
       backgroundImage: {
         dots: 'radial-gradient(circle, rgba(27,36,64,0.14) 1px, transparent 1px)',
+        'dots-dark': 'radial-gradient(circle, rgba(240,180,41,0.18) 1px, transparent 1px)',
       },
       backgroundSize: {
         dots: '18px 18px',
+        'dots-dark': '18px 18px',
       },
       boxShadow: {
         ticket: '0 10px 0 -2px rgba(27,36,64,0.06), 0 20px 40px -12px rgba(27,36,64,0.35)',

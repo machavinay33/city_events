@@ -17,7 +17,7 @@ export function MasonryGallery({ items }: { items: GalleryMedia[] }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.4, delay: (i % 6) * 0.05 }}
-            className="mb-4 block w-full overflow-hidden rounded-2xl border-2 border-ink break-inside-avoid group relative"
+            className="mb-4 block w-full overflow-hidden rounded-2xl border-2 border-gold/30 break-inside-avoid group relative"
           >
             <img src={item.url} alt={item.caption} loading="lazy" className="w-full object-cover transition-transform duration-500 group-hover:scale-110" />
             <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/20 transition-colors" />
