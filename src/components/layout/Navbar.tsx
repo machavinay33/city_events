@@ -46,7 +46,10 @@ export function Navbar() {
                 className="relative h-11 w-11 rounded-lg border-2 border-gold object-cover transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-3"
               />
             </div>
-            <span className="font-display text-lg sm:text-xl text-paper leading-none">City Events</span>
+            <span className="font-display text-2xl sm:text-3xl leading-none">
+              <span className="text-paper">City </span>
+              <span className="text-gold">Events</span>
+            </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
