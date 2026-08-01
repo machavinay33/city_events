@@ -39,6 +39,8 @@ export const FALLBACK_HOMEPAGE: HomepageContent = {
     { title: 'Local, always', body: 'Cafes, rooftops and street corners across Nagpur — we know the city.' },
     { title: 'Easy to book', body: 'One form, no back-and-forth. We handle the setup, sound and schedule.' },
   ],
+  highlight_video_url: '',
+  highlight_video_title: 'Watch a night with us',
   stats: [
     { label: 'Events Hosted', value: 40 },
     { label: 'Artists Featured', value: 75 },
@@ -50,8 +52,7 @@ export const FALLBACK_HOMEPAGE: HomepageContent = {
   section_order: ['about', 'why-us', 'stats', 'services', 'events', 'gallery', 'testimonials', 'contact'],
 }
 
-export const FALLBACK_PAGE_COVERS: Record<PageKey,
-  PastPerformance, PageCover> = {
+export const FALLBACK_PAGE_COVERS: Record<PageKey, PageCover> = {
   home: { page_key: 'home', image_url: '/assets/gallery/gallery-04.jpeg' },
   about: { page_key: 'about', image_url: '/assets/gallery/gallery-02.jpeg' },
   services: { page_key: 'services', image_url: '/assets/gallery/gallery-03.jpeg' },

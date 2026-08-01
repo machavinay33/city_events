@@ -93,8 +93,7 @@ export function useEvents() {
       .select('*')
       .eq('is_active', true)
       .order('event_date', { ascending: true })
-    if (error) throw error
-    // Return the actual data — even if empty, so deleted events don't show fallback
+    if (error || !data || data.length === 0) throw error ?? new Error('empty')
     return data as EventItem[]
   })
 }
@@ -105,15 +104,13 @@ export function useGallery() {
       .from('gallery_media')
       .select('*')
       .order('order_index', { ascending: true })
-    if (error) throw error
-    // Return actual data — even if empty, so deleted gallery items don't show fallback
+    if (error || !data || data.length === 0) throw error ?? new Error('empty')
     return data as GalleryMedia[]
   })
 }
 
 export function useTestimonials() {
-  return useLoadable(FALLBACK_TESTIMONIALS,
-  FALLBACK_PAST_PERFORMANCES, async () => {
+  return useLoadable(FALLBACK_TESTIMONIALS, async () => {
     const { data, error } = await supabase
       .from('testimonials')
       .select('*')
