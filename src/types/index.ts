@@ -14,6 +14,11 @@ export interface StatItem {
   value: number
 }
 
+export interface WhyUsReason {
+  title: string
+  body: string
+}
+
 export interface HomepageContent {
   hero_title: string
   hero_subtitle: string
@@ -21,6 +26,9 @@ export interface HomepageContent {
   hero_media_type: 'image' | 'video'
   about_title: string
   about_body: string
+  why_us_eyebrow: string
+  why_us_title: string
+  why_us_reasons: WhyUsReason[]
   stats: StatItem[]
   featured_service_ids: string[]
   featured_event_ids: string[]
