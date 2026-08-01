@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import {
   LayoutDashboard, Home, Sparkles, CalendarDays, ClipboardList,
-  UserCheck, Images, MessageSquareQuote, Settings, FolderOpen, LogOut,
+  UserCheck, Images, MessageSquareQuote, Settings, FolderOpen, LogOut, Camera,
 } from 'lucide-react'
 import { useAuth } from '@/hooks/useAuth'
 import { cn } from '@/lib/utils'
@@ -15,6 +15,7 @@ const NAV = [
   { to: '/admin/bookings', label: 'Bookings', icon: ClipboardList },
   { to: '/admin/registrations', label: 'Event Registrations', icon: UserCheck },
   { to: '/admin/gallery', label: 'Gallery', icon: Images },
+  { to: '/admin/past-performances', label: 'Past Performances', icon: Camera },
   { to: '/admin/testimonials', label: 'Testimonials', icon: MessageSquareQuote },
   { to: '/admin/media', label: 'Media Library', icon: FolderOpen },
   { to: '/admin/settings', label: 'Website Settings', icon: Settings },

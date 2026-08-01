@@ -128,3 +128,16 @@ export interface MediaLibraryItem {
   size_bytes: number
   created_at: string
 }
+
+export interface PerformanceMediaItem {
+  url: string
+  type: 'image' | 'video'
+}
+
+export interface PastPerformance {
+  id: string
+  venue_name: string
+  media: PerformanceMediaItem[]
+  order_index: number
+  is_active: boolean
+}

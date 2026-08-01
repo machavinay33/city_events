@@ -7,6 +7,7 @@ import type {
   Testimonial,
   PageCover,
   PageKey,
+  PastPerformance,
 } from '@/types'
 
 export const FALLBACK_SETTINGS: SiteSettings = {
@@ -49,7 +50,8 @@ export const FALLBACK_HOMEPAGE: HomepageContent = {
   section_order: ['about', 'why-us', 'stats', 'services', 'events', 'gallery', 'testimonials', 'contact'],
 }
 
-export const FALLBACK_PAGE_COVERS: Record<PageKey, PageCover> = {
+export const FALLBACK_PAGE_COVERS: Record<PageKey,
+  PastPerformance, PageCover> = {
   home: { page_key: 'home', image_url: '/assets/gallery/gallery-04.jpeg' },
   about: { page_key: 'about', image_url: '/assets/gallery/gallery-02.jpeg' },
   services: { page_key: 'services', image_url: '/assets/gallery/gallery-03.jpeg' },
@@ -168,4 +170,9 @@ export const FALLBACK_TESTIMONIALS: Testimonial[] = [
     order_index: 3,
     is_active: true,
   },
+]
+
+export const FALLBACK_PAST_PERFORMANCES: PastPerformance[] = [
+  { id: 'loc-nagpur', venue_name: 'LOC (Life of Chai), Nagpur', media: [], order_index: 1, is_active: true },
+  { id: 'villa-cafe-167', venue_name: 'Villa Cafe 167', media: [], order_index: 2, is_active: true },
 ]

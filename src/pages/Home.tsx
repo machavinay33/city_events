@@ -1,5 +1,6 @@
 import { Hero } from '@/components/home/Hero'
 import { AboutPreview } from '@/components/home/AboutPreview'
+import { VideoHighlight } from '@/components/home/VideoHighlight'
 import { WhyChooseUs } from '@/components/home/WhyChooseUs'
 import { Stats } from '@/components/home/Stats'
 import { ServicesPreview } from '@/components/home/ServicesPreview'
@@ -13,6 +14,7 @@ export default function Home() {
     <>
       <Hero />
       <AboutPreview />
+      <VideoHighlight />
       <WhyChooseUs />
       <Stats />
       <ServicesPreview />

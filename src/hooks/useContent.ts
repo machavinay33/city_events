@@ -8,6 +8,7 @@ import {
   FALLBACK_EVENTS,
   FALLBACK_GALLERY,
   FALLBACK_TESTIMONIALS,
+  FALLBACK_PAST_PERFORMANCES,
 } from '@/data/fallback'
 import type {
   SiteSettings,
@@ -17,6 +18,7 @@ import type {
   EventItem,
   GalleryMedia,
   Testimonial,
+  PastPerformance,
 } from '@/types'
 
 function useLoadable<T>(fallback: T, loader: () => Promise<T>) {
@@ -110,7 +112,8 @@ export function useGallery() {
 }
 
 export function useTestimonials() {
-  return useLoadable(FALLBACK_TESTIMONIALS, async () => {
+  return useLoadable(FALLBACK_TESTIMONIALS,
+  FALLBACK_PAST_PERFORMANCES, async () => {
     const { data, error } = await supabase
       .from('testimonials')
       .select('*')
@@ -118,5 +121,17 @@ export function useTestimonials() {
       .order('order_index', { ascending: true })
     if (error || !data || data.length === 0) throw error ?? new Error('empty')
     return data as Testimonial[]
+  })
+}
+
+export function usePastPerformances() {
+  return useLoadable(FALLBACK_PAST_PERFORMANCES, async () => {
+    const { data, error } = await supabase
+      .from('past_performances')
+      .select('*')
+      .eq('is_active', true)
+      .order('order_index', { ascending: true })
+    if (error || !data || data.length === 0) throw error ?? new Error('empty')
+    return data as PastPerformance[]
   })
 }

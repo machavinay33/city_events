@@ -3,6 +3,7 @@ import { PageHero } from '@/components/layout/PageHero'
 import { Section } from '@/components/ui/Section'
 import { WhyChooseUs } from '@/components/home/WhyChooseUs'
 import { Stats } from '@/components/home/Stats'
+import { PastPerformances } from '@/components/about/PastPerformances'
 import { useHomepageContent } from '@/hooks/useContent'
 
 export default function About() {
@@ -26,6 +27,7 @@ export default function About() {
         </motion.p>
       </Section>
 
+      <PastPerformances />
       <Stats />
       <WhyChooseUs />
     </>
