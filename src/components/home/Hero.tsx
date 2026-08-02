@@ -104,7 +104,6 @@ export function Hero() {
           whileHover={{ rotate: 0, scale: 1.02 }}
           className="relative mx-auto w-full max-w-sm"
         >
-          <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-gold/40 via-chili/20 to-transparent blur-2xl animate-glowPulse" />
           <div className="ticket-edge relative overflow-hidden rounded-3xl border-2 border-ink glass shadow-glow-lg">
             <img
               src={home.hero_media_url}

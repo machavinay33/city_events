@@ -27,7 +27,7 @@ export const FALLBACK_HOMEPAGE: HomepageContent = {
   hero_title: 'Live Moments,\nMade in Nagpur',
   hero_subtitle:
     'Music nights, comedy sets, poetry evenings and more — City Events brings the city together, one stage at a time.',
-  hero_media_url: '/assets/events/live-music-night-poster.jpeg',
+  hero_media_url: '/assets/gallery/gallery-04.jpeg',
   hero_media_type: 'image',
   about_title: 'We build nights people talk about for weeks',
   about_body:
@@ -116,31 +116,13 @@ export const FALLBACK_SERVICES: Service[] = [
   },
 ]
 
-export const FALLBACK_EVENTS: EventItem[] = [
-  {
-    id: 'fathers-day-live-music-night',
-    title: "Father's Day Live Music Night",
-    slug: 'fathers-day-live-music-night',
-    description:
-      "An evening of live acoustic and electric sets from Ritik, Bhavesh and Farhan. Free entry, open for all.",
-    poster_url: '/assets/events/live-music-night-poster.jpeg',
-    cover_url: '/assets/events/live-music-night-poster.jpeg',
-    venue: "Ginchi's Cafe, Nagpur",
-    event_date: '2026-06-21',
-    event_time: '18:30',
-    total_seats: 80,
-    remaining_seats: 32,
-    is_featured: true,
-    is_active: true,
-  },
-]
+export const FALLBACK_EVENTS: EventItem[] = []
 
 export const FALLBACK_GALLERY: GalleryMedia[] = [
   { id: 'g1', url: '/assets/gallery/gallery-01.jpeg', media_type: 'image', caption: 'City Events, live at a Nagpur cafe', order_index: 1 },
   { id: 'g2', url: '/assets/gallery/gallery-02.jpeg', media_type: 'image', caption: 'Open-mic night crowd', order_index: 2 },
   { id: 'g3', url: '/assets/gallery/gallery-03.jpeg', media_type: 'image', caption: 'Street-side acoustic set', order_index: 3 },
   { id: 'g4', url: '/assets/gallery/gallery-04.jpeg', media_type: 'image', caption: 'Full house at a City Events gig', order_index: 4 },
-  { id: 'g5', url: '/assets/events/live-music-night-poster.jpeg', media_type: 'image', caption: "Father's Day Live Music Night poster", order_index: 5 },
 ]
 
 export const FALLBACK_TESTIMONIALS: Testimonial[] = [
