@@ -15,15 +15,15 @@ export function ClientsMarquee() {
       </div>
 
       <div className="relative">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 sm:w-32 bg-gradient-to-r from-ink to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 sm:w-32 bg-gradient-to-l from-ink to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 sm:w-40 bg-gradient-to-r from-ink via-ink/80 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 sm:w-40 bg-gradient-to-l from-ink via-ink/80 to-transparent" />
 
         <div className="flex w-max animate-marquee gap-5">
           {loop.map((client, i) => (
             <div
               key={`${client.id}-${i}`}
               style={{ animationDelay: `${(i % 4) * 0.5}s` }}
-              className="flex h-28 w-52 sm:h-32 sm:w-60 shrink-0 items-center justify-center rounded-2xl border border-gold/30 bg-white/[0.04] animate-cardGlowPulse"
+              className="flex h-24 w-40 sm:h-32 sm:w-60 shrink-0 items-center justify-center rounded-2xl border border-gold/30 bg-white/[0.04] animate-cardGlowPulse"
             >
               {client.logo_url ? (
                 <img
