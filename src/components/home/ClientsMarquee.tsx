@@ -22,16 +22,17 @@ export function ClientsMarquee() {
           {loop.map((client, i) => (
             <div
               key={`${client.id}-${i}`}
-              className="group flex h-28 w-52 sm:h-32 sm:w-60 shrink-0 items-center justify-center rounded-2xl border-2 border-gold/20 bg-white/[0.04] transition-all duration-300 hover:border-gold/60 hover:bg-white/[0.08] hover:shadow-glow"
+              style={{ animationDelay: `${(i % 4) * 0.5}s` }}
+              className="flex h-28 w-52 sm:h-32 sm:w-60 shrink-0 items-center justify-center rounded-2xl border border-gold/30 bg-white/[0.04] animate-cardGlowPulse"
             >
               {client.logo_url ? (
                 <img
                   src={client.logo_url}
                   alt={client.name}
-                  className="max-h-20 sm:max-h-24 max-w-[85%] rounded-lg object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                  className="max-h-20 sm:max-h-24 max-w-[85%] rounded-lg object-contain"
                 />
               ) : (
-                <span className="px-4 text-center font-display text-lg sm:text-xl text-gold/70 transition-colors duration-300 group-hover:text-gold">
+                <span className="px-4 text-center font-display text-lg sm:text-xl text-gold">
                   {client.name}
                 </span>
               )}

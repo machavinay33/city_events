@@ -80,6 +80,10 @@ export default {
           '0%, 100%': { opacity: '0.5', transform: 'scale(1)' },
           '50%': { opacity: '0.9', transform: 'scale(1.04)' },
         },
+        cardGlow: {
+          '0%, 100%': { boxShadow: '0 0 0 1px rgba(240,180,41,0.3), 0 0 18px -4px rgba(240,180,41,0.35)' },
+          '50%': { boxShadow: '0 0 0 1px rgba(240,180,41,0.7), 0 0 28px -2px rgba(240,180,41,0.6)' },
+        },
         gradientShift: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
@@ -92,6 +96,7 @@ export default {
         'blob-delay': 'blob 20s ease-in-out infinite 2s',
         shimmer: 'shimmer 2.5s linear infinite',
         glowPulse: 'glowPulse 4s ease-in-out infinite',
+        cardGlowPulse: 'cardGlow 3s ease-in-out infinite',
         gradientShift: 'gradientShift 8s ease infinite',
       },
     },
