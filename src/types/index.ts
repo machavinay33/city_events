@@ -143,3 +143,11 @@ export interface PastPerformance {
   order_index: number
   is_active: boolean
 }
+
+export interface Client {
+  id: string
+  name: string
+  logo_url: string
+  order_index: number
+  is_active: boolean
+}

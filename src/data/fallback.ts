@@ -8,6 +8,7 @@ import type {
   PageCover,
   PageKey,
   PastPerformance,
+  Client,
 } from '@/types'
 
 export const FALLBACK_SETTINGS: SiteSettings = {
@@ -176,4 +177,11 @@ export const FALLBACK_TESTIMONIALS: Testimonial[] = [
 export const FALLBACK_PAST_PERFORMANCES: PastPerformance[] = [
   { id: 'loc-nagpur', venue_name: 'LOC (Life of Chai), Nagpur', media: [], order_index: 1, is_active: true },
   { id: 'villa-cafe-167', venue_name: 'Villa Cafe 167', media: [], order_index: 2, is_active: true },
+]
+
+export const FALLBACK_CLIENTS: Client[] = [
+  { id: 'loc-premium-coffee', name: 'LOC Premium Coffee', logo_url: '', order_index: 1, is_active: true },
+  { id: 'the-hungry-wrap', name: 'The Hungry Wrap', logo_url: '', order_index: 2, is_active: true },
+  { id: 'villa-167', name: 'Villa 167', logo_url: '', order_index: 3, is_active: true },
+  { id: 'gunchiis-cafe', name: 'Gunchiis Cafe & Cakes', logo_url: '', order_index: 4, is_active: true },
 ]

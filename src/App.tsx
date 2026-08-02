@@ -23,6 +23,7 @@ import AdminBookings from '@/pages/admin/Bookings'
 import AdminRegistrations from '@/pages/admin/Registrations'
 import AdminGallery from '@/pages/admin/Gallery'
 import AdminPastPerformances from '@/pages/admin/PastPerformances'
+import AdminClients from '@/pages/admin/Clients'
 import AdminTestimonials from '@/pages/admin/Testimonials'
 import AdminSettings from '@/pages/admin/Settings'
 import AdminMediaLibrary from '@/pages/admin/MediaLibrary'
@@ -53,6 +54,7 @@ export default function App() {
         <Route path="/admin/registrations" element={<ProtectedRoute><AdminRegistrations /></ProtectedRoute>} />
         <Route path="/admin/gallery" element={<ProtectedRoute><AdminGallery /></ProtectedRoute>} />
           <Route path="/admin/past-performances" element={<ProtectedRoute><AdminPastPerformances /></ProtectedRoute>} />
+        <Route path="/admin/clients" element={<ProtectedRoute><AdminClients /></ProtectedRoute>} />
         <Route path="/admin/testimonials" element={<ProtectedRoute><AdminTestimonials /></ProtectedRoute>} />
         <Route path="/admin/media" element={<ProtectedRoute><AdminMediaLibrary /></ProtectedRoute>} />
         <Route path="/admin/settings" element={<ProtectedRoute><AdminSettings /></ProtectedRoute>} />

@@ -9,6 +9,7 @@ import {
   FALLBACK_GALLERY,
   FALLBACK_TESTIMONIALS,
   FALLBACK_PAST_PERFORMANCES,
+  FALLBACK_CLIENTS,
 } from '@/data/fallback'
 import type {
   SiteSettings,
@@ -19,6 +20,7 @@ import type {
   GalleryMedia,
   Testimonial,
   PastPerformance,
+  Client,
 } from '@/types'
 
 function useLoadable<T>(fallback: T, loader: () => Promise<T>) {
@@ -130,5 +132,17 @@ export function usePastPerformances() {
       .order('order_index', { ascending: true })
     if (error) throw error
     return (data ?? []) as PastPerformance[]
+  })
+}
+
+export function useClients() {
+  return useLoadable(FALLBACK_CLIENTS, async () => {
+    const { data, error } = await supabase
+      .from('clients')
+      .select('*')
+      .eq('is_active', true)
+      .order('order_index', { ascending: true })
+    if (error) throw error
+    return (data ?? []) as Client[]
   })
 }
