@@ -33,7 +33,7 @@ export function Navbar() {
         transition={{ duration: 0.5 }}
         className={cn(
           'transition-all duration-500',
-          scrolled ? 'mx-3 mt-3 sm:mx-6 sm:mt-4 rounded-2xl glass-dark shadow-glass' : 'bg-transparent',
+          scrolled ? 'mx-3 mt-3 sm:mx-6 sm:mt-4 rounded-2xl bg-ink/95 border border-gold/15 shadow-glass' : 'bg-transparent',
         )}
       >
         <div className="container-ce flex items-center justify-between py-3">
@@ -107,7 +107,7 @@ export function Navbar() {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="lg:hidden overflow-hidden border-t border-gold/15 glass-dark"
+              className="lg:hidden overflow-hidden border-t border-gold/15 bg-ink/95"
             >
               <div className="container-ce flex flex-col py-4">
                 {LINKS.map((link, i) => (

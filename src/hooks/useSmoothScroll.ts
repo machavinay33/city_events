@@ -1,28 +1,10 @@
-import { useEffect } from 'react'
-import Lenis from '@studio-freight/lenis'
-
-// Lightweight smooth-scroll wrapper. Skips itself entirely if the visitor
-// has "reduce motion" turned on at the OS level.
+// Native scrolling only. An earlier version of this hook used the Lenis
+// library to hand-roll smooth scrolling in JavaScript, but JS-driven scroll
+// is expensive to keep at 60fps on anything without a very strong GPU —
+// it looked fine on Safari/Apple Silicon but caused real jank on Windows
+// laptops and Android. The browser's own scrolling is GPU-accelerated and
+// effectively free; `scroll-behavior: smooth` in index.css already covers
+// anchor-link jumps, so nothing else is needed here.
 export function useSmoothScroll() {
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (prefersReducedMotion) return
-
-    const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-    })
-
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-    const id = requestAnimationFrame(raf)
-
-    return () => {
-      cancelAnimationFrame(id)
-      lenis.destroy()
-    }
-  }, [])
+  // intentionally a no-op — kept as a hook so App.tsx doesn't need to change
 }

@@ -52,24 +52,24 @@
   /* Glassmorphism — light surface (used on paper background) */
   .glass {
     background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(16px) saturate(160%);
-    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
     border: 1px solid rgba(255, 255, 255, 0.6);
   }
 
   /* Glassmorphism — dark surface (used on ink background) */
   .glass-dark {
     background: rgba(27, 36, 64, 0.55);
-    backdrop-filter: blur(16px) saturate(160%);
-    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
     border: 1px solid rgba(240, 180, 41, 0.15);
   }
 
   /* Glassmorphism — gold-tinted accent surface */
   .glass-gold {
     background: rgba(240, 180, 41, 0.12);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
     border: 1px solid rgba(240, 180, 41, 0.35);
   }
 
