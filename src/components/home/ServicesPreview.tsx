@@ -1,15 +1,20 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { useServices } from '@/hooks/useContent'
+import { useServices, useHomepageContent } from '@/hooks/useContent'
 import { Section } from '@/components/ui/Section'
 
 export function ServicesPreview() {
   const { data: services } = useServices()
+  const { data: home } = useHomepageContent()
+
+  const featuredServices = home.featured_service_ids?.length > 0
+    ? services.filter(s => home.featured_service_ids.includes(s.id))
+    : services.slice(0, 5)
 
   return (
     <Section eyebrow="What we do" title="Services, built for a stage" description="Pick a format — we bring the artists, the sound and the run-of-show.">
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.slice(0, 5).map((service, i) => (
+        {featuredServices.map((service, i) => (
           <motion.div
             key={service.id}
             initial={{ opacity: 0, y: 24 }}

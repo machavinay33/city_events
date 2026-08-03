@@ -209,7 +209,7 @@ export default function AdminHomepage() {
               </li>
             ))}
           </ul>
-          <p className="mt-3 text-xs text-ink/40">Order is saved for reference; the live homepage currently renders sections in a fixed layout — hook this array into Home.tsx if you want fully dynamic ordering.</p>
+          <p className="mt-3 text-xs text-ink/40">The live homepage renders these sections in the order you set here.</p>
         </section>
       </div>
     </AdminLayout>

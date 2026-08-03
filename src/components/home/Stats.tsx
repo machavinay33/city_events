@@ -13,11 +13,17 @@ function StatBlock({ label, value }: { label: string; value: number }) {
 
 export function Stats() {
   const { data: home } = useHomepageContent()
+  
+  // Safety check for stats data
+  const stats = home?.stats || []
+  
+  if (stats.length === 0) return null
+
   return (
     <section className="py-14 border-y-2 border-ink bg-gold-50">
       <div className="container-ce grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {home.stats.map((stat) => (
-          <StatBlock key={stat.label} label={stat.label} value={stat.value} />
+        {stats.map((stat) => (
+          <StatBlock key={stat.label} label={stat.label} value={stat.value || 0} />
         ))}
       </div>
     </section>

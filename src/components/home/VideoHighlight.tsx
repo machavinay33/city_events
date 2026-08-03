@@ -1,7 +1,12 @@
 import { motion } from 'framer-motion'
 import { Play, Sparkles } from 'lucide-react'
+import { useHomepageContent } from '@/hooks/useContent'
 
 export function VideoHighlight() {
+  const { data: home } = useHomepageContent()
+  
+  if (!home.highlight_video_url) return null
+
   return (
     <section className="relative py-16 sm:py-24 overflow-hidden bg-ink">
       {/* Decorative background elements */}
@@ -20,7 +25,7 @@ export function VideoHighlight() {
           {/* Video Container with "Ticket" style edges or just sleek rounded corners */}
           <div className="relative aspect-video w-full overflow-hidden rounded-[2rem] sm:rounded-[3rem] border-2 border-gold/20 shadow-glow-lg bg-ink/50">
             <video
-              src="/assets/videos/dance-highlight.mp4"
+              src={home.highlight_video_url}
               autoPlay
               loop
               muted
@@ -46,7 +51,7 @@ export function VideoHighlight() {
                     <span className="font-mono text-[10px] uppercase tracking-widest">Nagpur's Energy</span>
                   </div>
                   <h2 className="font-display text-3xl sm:text-5xl text-paper leading-[1.1] mb-2">
-                    Moments that turn into <span className="text-gold">memories.</span>
+                    {home.highlight_video_title || 'Moments that turn into memories.'}
                   </h2>
                   <p className="text-paper/60 text-sm sm:text-lg font-body max-w-md">
                     From street sessions to grand stages, we bring the best of Nagpur's talent to life.
