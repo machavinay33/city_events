@@ -78,10 +78,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="relative mt-8"
+            className="relative mt-8 py-6 -my-6"
           >
-            <div className="pointer-events-none absolute -inset-x-6 -inset-y-8 -z-10 rounded-3xl bg-gradient-to-br from-gold/35 via-chili/20 to-transparent blur-2xl" />
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="pointer-events-none absolute inset-0 rounded-[2rem] bg-gradient-to-br from-gold/60 via-gold/30 to-chili/25 blur-xl" />
+            <div className="relative flex flex-col sm:flex-row gap-4">
               <Link
                 to="/events"
                 className="group relative inline-flex w-full sm:w-auto items-center justify-center overflow-hidden rounded-full bg-chili px-7 py-3.5 font-bold text-paper shadow-[0_6px_0_0_#0D1120] hover:translate-y-[3px] hover:shadow-[0_3px_0_0_#0D1120] transition-all"
