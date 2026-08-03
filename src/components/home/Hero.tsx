@@ -78,21 +78,24 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-8 flex flex-col sm:flex-row gap-4"
+            className="relative mt-8"
           >
-            <Link
-              to="/events"
-              className="group relative inline-flex w-full sm:w-auto items-center justify-center overflow-hidden rounded-full bg-chili px-7 py-3.5 font-bold text-paper shadow-[0_6px_0_0_#0D1120] hover:translate-y-[3px] hover:shadow-[0_3px_0_0_#0D1120] transition-all"
-            >
-              <span className="absolute inset-0 -translate-x-full bg-white/25 skew-x-12 transition-transform duration-500 group-hover:translate-x-full" />
-              <span className="relative flex items-center gap-2"><Mic2 size={16} /> See Upcoming Events</span>
-            </Link>
-            <Link
-              to="/services"
-              className="inline-flex w-full sm:w-auto items-center justify-center rounded-full border-2 border-gold px-7 py-3.5 font-bold text-gold hover:bg-gold hover:text-ink transition-colors"
-            >
-              Book a Service
-            </Link>
+            <div className="pointer-events-none absolute -inset-x-6 -inset-y-8 -z-10 rounded-3xl bg-gradient-to-br from-gold/35 via-chili/20 to-transparent blur-2xl" />
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/events"
+                className="group relative inline-flex w-full sm:w-auto items-center justify-center overflow-hidden rounded-full bg-chili px-7 py-3.5 font-bold text-paper shadow-[0_6px_0_0_#0D1120] hover:translate-y-[3px] hover:shadow-[0_3px_0_0_#0D1120] transition-all"
+              >
+                <span className="absolute inset-0 -translate-x-full bg-white/25 skew-x-12 transition-transform duration-500 group-hover:translate-x-full" />
+                <span className="relative flex items-center gap-2"><Mic2 size={16} /> See Upcoming Events</span>
+              </Link>
+              <Link
+                to="/services"
+                className="inline-flex w-full sm:w-auto items-center justify-center rounded-full border-2 border-gold px-7 py-3.5 font-bold text-gold hover:bg-gold hover:text-ink transition-colors"
+              >
+                Book a Service
+              </Link>
+            </div>
           </motion.div>
         </div>
 
