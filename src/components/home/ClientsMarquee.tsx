@@ -8,7 +8,7 @@ export function ClientsMarquee() {
   const loop = [...clients, ...clients]
 
   return (
-    <section className="relative overflow-hidden border-y-2 border-gold/15 bg-ink py-12 sm:py-14">
+    <section className="relative overflow-hidden border-y-2 border-gold/15 bg-ink-800 py-12 sm:py-14">
       <div className="container-ce relative mb-8">
         <p className="text-center eyebrow text-gold">Trusted by</p>
         <h2 className="text-center font-display text-2xl sm:text-3xl text-paper mt-2">Our Clients</h2>
