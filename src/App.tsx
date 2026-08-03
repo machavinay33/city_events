@@ -3,6 +3,7 @@ import { Toaster } from 'react-hot-toast'
 import { Layout } from '@/components/layout/Layout'
 import { Loader } from '@/components/layout/Loader'
 import { ScrollProgress } from '@/components/layout/ScrollProgress'
+import { ScrollToTop } from '@/components/layout/ScrollToTop'
 import { ProtectedRoute } from '@/components/admin/ProtectedRoute'
 import { useSmoothScroll } from '@/hooks/useSmoothScroll'
 
@@ -35,6 +36,7 @@ export default function App() {
     <>
       <Loader />
       <ScrollProgress />
+      <ScrollToTop />
       <Toaster position="top-center" toastOptions={{ style: { fontFamily: 'Jost, sans-serif' } }} />
       <Routes>
         <Route path="/" element={<Layout><Home /></Layout>} />

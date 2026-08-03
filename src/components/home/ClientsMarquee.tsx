@@ -23,7 +23,7 @@ export function ClientsMarquee() {
             <div
               key={`${client.id}-${i}`}
               style={{ animationDelay: `${(i % 4) * 0.5}s` }}
-              className="flex h-24 w-40 sm:h-32 sm:w-60 shrink-0 items-center justify-center rounded-2xl border border-gold/30 bg-white/[0.04] animate-cardGlowPulse"
+              className="flex h-28 w-52 sm:h-32 sm:w-60 shrink-0 items-center justify-center rounded-2xl border border-gold/30 bg-white/[0.04] animate-cardGlowPulse"
             >
               {client.logo_url ? (
                 <img
