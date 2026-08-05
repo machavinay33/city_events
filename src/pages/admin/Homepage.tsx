@@ -86,11 +86,11 @@ export default function AdminHomepage() {
               <textarea rows={2} className={inputClass} value={content.hero_subtitle} onChange={(e) => setContent({ ...content, hero_subtitle: e.target.value })} />
             </div>
           </div>
-          <label className={labelClass}>Hero Background Image / Video</label>
+          <label className={labelClass}>Team Photo (Main Hero Card)</label>
           <ImageUploader
             value={content.hero_media_url}
-            accept="image/*,video/*"
-            onUploaded={(url) => setContent({ ...content, hero_media_url: url, hero_media_type: url.match(/\.(mp4|webm|mov)$/i) ? 'video' : 'image' })}
+            accept="image/*"
+            onUploaded={(url) => setContent({ ...content, hero_media_url: url, hero_media_type: 'image' })}
           />
         </section>
 

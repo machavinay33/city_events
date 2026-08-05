@@ -56,7 +56,7 @@ create table if not exists homepage_content (
   id int primary key default 1,
   hero_title text not null default E'Live Moments,\nMade in Nagpur',
   hero_subtitle text not null default 'Music nights, comedy sets, poetry evenings and more — City Events brings the city together, one stage at a time.',
-  hero_media_url text not null default '/assets/events/live-music-night-poster.jpeg',
+  hero_media_url text not null default '/assets/events/live-music-night-poster.jpeg', -- Now used for Team Photo
   hero_media_type text not null default 'image' check (hero_media_type in ('image','video')),
   about_title text not null default 'We build nights people talk about for weeks',
   about_body text not null default 'City Events is a Nagpur-based live events collective. We host open-mic music nights, stand-up comedy, poetry circles, bhajan jam sessions and art lecture evenings at cafes and venues across the city — free to attend, open to everyone.',

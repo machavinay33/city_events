@@ -27,7 +27,7 @@ export const FALLBACK_HOMEPAGE: HomepageContent = {
   hero_title: 'Live Moments,\nMade in Nagpur',
   hero_subtitle:
     'Music nights, comedy sets, poetry evenings and more — City Events brings the city together, one stage at a time.',
-  hero_media_url: '/assets/gallery/gallery-04.jpeg',
+  hero_media_url: '/assets/gallery/gallery-04.jpeg', // This will be the Team Photo
   hero_media_type: 'image',
   about_title: 'We build nights people talk about for weeks',
   about_body:

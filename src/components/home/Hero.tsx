@@ -110,16 +110,10 @@ export function Hero() {
           <div className="ticket-edge relative overflow-hidden rounded-3xl border-2 border-ink glass shadow-glow-lg">
             <img
               src={home.hero_media_url}
-              alt="City Events live poster"
+              alt="City Events team photo"
               className="aspect-[4/5] w-full object-cover"
             />
-            {nextEvent && (
-              <div className="border-t-2 border-dashed border-ink/40 glass-gold px-5 py-4">
-                <p className="font-mono text-[11px] uppercase tracking-wider text-ink/60">Up next</p>
-                <p className="font-display text-lg text-ink leading-tight">{nextEvent.title}</p>
-                <p className="text-sm text-ink/70">{formatDate(nextEvent.event_date)} · {nextEvent.venue}</p>
-              </div>
-            )}
+
           </div>
         </motion.div>
       </motion.div>
